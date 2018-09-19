@@ -8,4 +8,10 @@ lazy val root = (project in file("."))
     name := "$name$",
     version := "0.1.0-SNAPSHOT"
   )
-  .settings(libraryDependencies ++= utils ++ tests)
+  .settings(libraryDependencies ++= Seq (
+    typesafeConfig,
+    scalaLogging
+  ))
+  .settings(libraryDependencies ++= testDependencies(Seq(
+    scalatest
+  )))
