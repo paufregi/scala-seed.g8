@@ -9,7 +9,7 @@ object Settings {
 
   lazy val general = Seq(
     scalaVersion := Version.SCALA,
-    organization := "net.pellis",
+
 
     resolvers ++= Seq(
       Resolver.defaultLocal,
