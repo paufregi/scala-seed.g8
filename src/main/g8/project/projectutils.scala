@@ -25,15 +25,6 @@ package object projectutils {
           version := v
         )
 
-    def withAssembly(folder: String, main: String): Project =
-      inner
-        .settings(
-          test in assembly := {},
-          target in assembly := file(folder),
-          assemblyJarName in assembly := s"${name.value}.jar",
-          mainClass in assembly := Some(main)
-        )
-
     def withLibraries(libs: ModuleID*): Project =
       inner.settings(libraryDependencies ++= libs)
 
