@@ -18,7 +18,7 @@ package object projectutils {
           organization := org
         )
 
-    def version(v: String): Project =
+    def withVersion(v: String): Project =
       inner
         .settings(
           version := v
