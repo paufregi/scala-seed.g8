@@ -2,7 +2,6 @@ package lab.acme
 
 import sbt._
 import sbt.Keys._
-import sbtassembly.AssemblyKeys._
 
 package object projectutils {
 
