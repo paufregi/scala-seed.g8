@@ -31,16 +31,13 @@ package object projectutils {
           test in assembly := {},
           target in assembly := file(folder),
           assemblyJarName in assembly := s"${name.value}.jar",
-          mainClass in assembly := Some(main),
+          mainClass in assembly := Some(main)
         )
 
     def withLibraries(libs: ModuleID*): Project =
       inner.settings(libraryDependencies ++= libs)
 
     def withTestLibraries(libs: ModuleID*): Project =
-      inner.settings(libraryDependencies ++= testDependencies(libs))
-
-    private def testDependencies(list: Seq[ModuleID]): Seq[ModuleID] = list.map(_ % "test,it")
+      inner.settings(libraryDependencies ++= libs.map(_ % "test,it"))
   }
-
 }
